@@ -28,7 +28,6 @@ RSpec.describe 'Installation::Onboarding API', type: :request do
     before do
       allow(AccountBuilder).to receive(:new).and_return(account_builder)
       allow(account_builder).to receive(:perform).and_return(true)
-      allow(ChatwootHub).to receive(:register_instance).and_return(true)
       Redis::Alfred.set(Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING, true)
     end
 
