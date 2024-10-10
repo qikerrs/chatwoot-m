@@ -53,13 +53,6 @@ class ChatwootHub
       additional_information: {}
     }
   end
-  
-  def self.random_string(length=10)
-    chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ0123456789'
-    password = ''
-    length.times { password << chars[rand(chars.size)] }
-    password
-  end
 
   def self.sync_with_hub
     begin
@@ -70,8 +63,8 @@ class ChatwootHub
           version: Chatwoot.config[:version],
           plan: "enterprise",
           plan_quantity: 10000000,
-          chatwoot_support_identifier_hash: random_string(64),
-          chatwoot_support_website_token: random_string(24),
+          chatwoot_support_identifier_hash: "abcccc",
+          chatwoot_support_website_token: "abccccc",
           chatwoot_support_script_url: "https://app.chatwoot.com"
           
       }
